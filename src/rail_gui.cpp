@@ -148,7 +148,7 @@ void CcRailDepot(Commands, const CommandCost &result, TileIndex tile, RailType, 
 
 	if (IsTileType(tile, MP_RAILWAY)) {
 		PlaceExtraDepotRail(tile, _place_depot_extra_dir[dir], _place_depot_extra_track[dir]);
-		PlaceExtraDepotRail(tile, _place_depot_extra_dir[dir + 4], _place_depot_extra_track[dir + 4]);
+		if (_settings_client.gui.depot_straight_track) PlaceExtraDepotRail(tile, _place_depot_extra_dir[dir + 4], _place_depot_extra_track[dir + 4]);
 		PlaceExtraDepotRail(tile, _place_depot_extra_dir[dir + 8], _place_depot_extra_track[dir + 8]);
 	}
 }
